@@ -95,6 +95,7 @@ header {
     text-align: center;
     padding: 40px 20px;
     box-sizing: border-box;
+    box-shadow: 2px 1px 20px rgb(72, 100, 92);
 }
 
 @media screen and (min-width: 476px) {
