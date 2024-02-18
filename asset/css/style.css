@@ -1,26 +1,36 @@
 @charset "UTF-8"
 @import url('https://fonts.googleapis.com/css2?family=Oswald:wght@500&family=Sixtyfour&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=MedievalSharp&family=Roboto:ital,wght@0,100;0,300;0,400;0,500;0,700;0,900;1,100;1,300;1,400;1,500;1,700;1,900&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Comfortaa:wght@300&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Russo+One&display=swap');
 
-* {
-    margin: 0px;
-    padding: 0px;
+
+*{
+    margin: 0;
+    padding: 0;
 }
 
 :root {
     /*FONTES DO SITE*/
     --font-Oswald:'Oswald', sans-serif;
+    --font-MedievalSharp:'MedievalSharp', cursive;
+    --font-Roboto: 'Roboto', sans-serif;
+    --font-Comfortaa: 'Comfortaa', sans-serif;
+    --font-Russo-One: 'Russo One', sans-serif;
 
     /*PALETA DE CORES DO SITE*/
-    --cor0:#8EEF17;
-    --cor1:#81BD39;
-    --cor2:#6B8A45;
-    --cor3:#4B573D;
-    --cor4:#363832;
+    --cor0:#33EAF2;
+    --cor1:#33F2BA;
+    --cor2:#5FF495;
+    --cor3:#33F279;
+    --cor4:rgb(207, 87, 87);
+    --cor5:#a70606;
 
-    --cor5:black;
     --cor6:white;
+    --cor7:black;
 
-    /* background-image: linear-gradient(to bottom, var(--cor5), var(--cor3), var(--cor0)); */
+    /* background-image: linear-gradient(to bottom, var(--cor), var(--cor), var(--cor)); */
 }
 
 
@@ -30,13 +40,12 @@ body {
 
 header {
     display: flex;
+    background-color: var(--cor7);
     justify-content: space-between; /*Divide os conteudos em esquerda e direita. É o comando que manda os menus para o lado direito, caso eu me confunda.*/
     align-items: center;/*Alinha os conteudos (tanto esquerda quanto direita) dentro de "header"*/
-    background-color:var(--cor3);
-    height: 50px;
+    height: 61px;
     padding: 0px 20px; /* 0 superior e inferior(top e bottom), 20 esquerda e direita (left/right)*/
 }
-
 
 .nav-menu {
     display: flex;
@@ -47,14 +56,81 @@ header {
        
 }
 .nav-menu li a {
-    color: var(--cor5);
-    text-decoration: none;
+    color: var(--cor6);
     font-size: 18px;
+    font-family: var(--font-Roboto);
+    font-weight:bolder;
+    text-decoration: none;
     padding: 8px 16px;
-    font-family: var(--font-Oswald);
 }
 
 .nav-menu a:hover { /*Deixa o elemento de texto da NAV da cor que eu tenha escolhido na variavel "var(x);" */
-    background-color: var(--cor2);
-    border-bottom: 1px solid white;
+    background-color: var(--cor1);
+    border-bottom: 1px solid rgb(255, 255, 255);
+}
+
+.banner {
+    background-image: linear-gradient(to bottom, var(--cor0), var(--cor2), var(--cor3));
+    min-height: 150px;
+    height: 100px;
+    width: 1278px;
+    text-align: center;
+    padding: 0px 20px;
+    padding-top: 40px;
+}
+
+.fontes > h1 {
+    justify-content: center;
+    font-family: var(--font-Russo-One);
+    font-weight: bolder;
+    font-size: 70px;
+    color: var();
+    margin: auto; 
+    padding-bottom: 5px;
+}
+
+.fontes > p {
+    justify-content: center;
+    font-family: var(--font-Comfortaa);
+    font-weight: bolder;
+    font-size: 20px;
+}
+
+main {
+    min-width: 300px;
+    max-width: 1000px;
+    margin: auto;
+    margin-bottom: 30px;
+    padding: 20px;
+    background-color:rgb(193, 231, 218);
+    box-shadow: 0px 0px 20px rgba(0, 0, 0, 0.418);
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+}
+
+
+
+/*FOOTER - RODAPÉ*/
+footer { /*Estilos para o rodapé conforme necessário */
+    background-color: var(--cor7);
+    color: white;
+    text-align: center;
+    font-size: 0.8em;
+    padding: 5px;
+}
+
+footer a {
+    color: white;
+    font-weight: bolder;
+    text-decoration: none;
+}
+
+footer a:hover {
+    text-decoration: underline;
+    color: var(--cor2);
+}
+
+footer a img {
+    width: 32px;
+    height: 32px;
 }
