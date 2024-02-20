@@ -138,6 +138,40 @@ main {
 
 
 
+/* Estilo para o popup */
+.popup {
+    position: fixed;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    background-color: rgba(0, 0, 0, 0.7); /* Fundo escurecido */
+    padding: 20px;
+    border: 1px solid black;
+    border-radius: 10px;
+    z-index: 1000; /* Para garantir que o pop-up esteja acima de outros elementos */
+    display: none; /* Oculta o pop-up por padrão */
+}
+
+.popup img {
+    max-width: 100%;
+    height: auto;
+    display: block;
+    margin: auto; /* Centraliza a imagem horizontalmente */
+}
+
+.popup p {
+    color: white;
+    text-align: center;
+    margin-top: 10px; /* Espaçamento superior */
+}
+
+@media screen and (max-width: 768px) {
+    .popup {
+        max-width: 90%; /* Reduz a largura máxima do popup em telas menores */
+        padding: 5px; /* Reduz o preenchimento do popup */
+    }
+}
+
 /*-----------------------------------------------------------------------------------------------*/
 
 /*FOOTER - RODAPÉ*/
