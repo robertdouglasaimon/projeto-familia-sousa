@@ -157,12 +157,15 @@ main {
     height: auto;
     display: block;
     margin: auto; /* Centraliza a imagem horizontalmente */
+    border-radius: 7px;
+    border: 1px solid black;
 }
 
 .popup p {
     color: white;
     text-align: center;
     margin-top: 10px; /* Espaçamento superior */
+    font-family: var(--font-Comfortaa);
 }
 
 @media screen and (max-width: 768px) {

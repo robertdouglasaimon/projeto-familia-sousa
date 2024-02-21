@@ -1,18 +1,17 @@
-//JS DA PAGINA "INTEGRANTES"
-
-// JavaScript para interação com áreas clicáveis na imagem da árvore genealógica
-
 // Adiciona evento de mouseover para cada área clicável
 document.querySelectorAll('area').forEach(area => {
     area.addEventListener('mouseover', function() {
-        exibirPopup(this); // Chamada da função para exibir o popup
+        const popupId = area.dataset.popupId; // Obtém o ID do popup associado à área clicável
+        if (popupId) {
+            exibirPopup(popupId); // Chama a função para exibir o popup pelo ID
+        }
     });
 });
 
-// Função para exibir o popup com a imagem e descrição do integrante
-function exibirPopup(area) {
+// Função para exibir o popup com o ID específico
+function exibirPopup(popupId) {
     // Define a posição do popup com base no centro da tela
-    const popup = document.getElementById('popup');
+    const popup = document.getElementById(popupId);
     const popupWidth = popup.offsetWidth;
     const popupHeight = popup.offsetHeight;
     const windowWidth = window.innerWidth;
@@ -20,28 +19,27 @@ function exibirPopup(area) {
     const popupLeft = (windowWidth - popupWidth) / 2;
     const popupTop = (windowHeight - popupHeight) / 2;
 
-    popup.style.left = popupLeft + 'px';
-    popup.style.top = popupTop + 'px';
+    // Verifica se a tela é grande o suficiente para exibir o popup
+    if (windowWidth > 1075 && windowHeight > 615) {
+        popup.style.left = popupLeft + 'px';
+        popup.style.top = popupTop + 'px';
 
-    // Define a imagem e a descrição do integrante
-    const imagem = popup.querySelector('img');
-    const descricao = popup.querySelector('p');
-    imagem.src = area.dataset.imagem; // Assume que o atributo data-imagem foi definido nas áreas clicáveis
-    descricao.textContent = area.dataset.descricao; // Assume que o atributo data-descricao foi definido nas áreas clicáveis
+        // Exibe o popup
+        popup.style.display = 'block';
 
-    // Exibe o popup
-    popup.style.display = 'block';
+        // Exibe a camada de fundo semi-transparente
+        document.getElementById('popup-overlay').style.display = 'block';
 
-    // Exibe a camada de fundo semi-transparente
-    document.getElementById('popup-overlay').style.display = 'block';
-
-    // Adiciona um evento de clique no overlay para fechar o popup
-    document.getElementById('popup-overlay').addEventListener('click', fecharPopup);
+        // Adiciona um evento de clique no overlay para fechar o popup
+        document.getElementById('popup-overlay').addEventListener('click', fecharPopup);
+    }
 }
 
 // Função para fechar o popup
 function fecharPopup() {
-    document.getElementById('popup').style.display = 'none';
+    document.querySelectorAll('.popup').forEach(popup => {
+        popup.style.display = 'none';
+    });
     document.getElementById('popup-overlay').style.display = 'none'; // Oculta a camada de fundo semi-transparente
 }
 
@@ -52,45 +50,10 @@ document.addEventListener('keydown', function(event) {
     }
 });
 
-// Adiciona evento de mouseout para esconder o popup quando o mouse sair da imagem
-document.querySelector('.arvore-png img').addEventListener('mouseout', function(event) {
-    const area = event.relatedTarget; // Elemento para onde o mouse está se movendo
-    const popup = document.getElementById('popup');
-    if (!popup.contains(area)) { // Verifica se o elemento para onde o mouse está se movendo não está dentro do popup
-        fecharPopup();
-    }
+// Adiciona evento de mouseleave para esconder o popup quando o mouse sair da imagem
+document.querySelector('.arvore-png img').addEventListener('mouseleave', function() {
+    fecharPopup();
 });
 
 
 
-/* JavaScript para limitar o tamanho da area da interação. ----------------------------------------------------------*/
-
-// Função para exibir o popup com a imagem e descrição do integrante
-function exibirPopup(area, mouseX, mouseY) {
-    // Verifica se a tela é grande o suficiente para exibir o popup
-    if (window.innerWidth > 1075 && window.innerHeight > 615) {
-        // Define a posição do popup com base no centro da tela
-        const popup = document.getElementById('popup');
-        const popupWidth = popup.offsetWidth;
-        const popupHeight = popup.offsetHeight;
-        const popupLeft = (window.innerWidth - popupWidth) / 2;
-        const popupTop = (window.innerHeight - popupHeight) / 2;
-
-        popup.style.left = popupLeft + 'px';
-        popup.style.top = popupTop + 'px';
-
-        // Define a imagem e a descrição do integrante
-        const imagem = popup.querySelector('img');
-        const descricao = popup.querySelector('p');
-        imagem.src = area.dataset.imagem; // Assume que o atributo data-imagem foi definido nas áreas clicáveis
-        descricao.textContent = area.dataset.descricao; // Assume que o atributo data-descricao foi definido nas áreas clicáveis
-
-        // Exibe o popup
-        popup.style.display = 'block';
-
-        // Exibe a camada de fundo semi-transparente
-        document.getElementById('popup-overlay').style.display = 'block';
-    }
-}
-
-/*---------------------------------------------------------------------------------------*/
