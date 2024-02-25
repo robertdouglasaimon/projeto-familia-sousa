@@ -68,10 +68,6 @@ header {
     margin-right: -20px; /* Adiciona margem à direita para todos os itens do menu */
 }
 
-.nav-menu li:first-child {
-    margin-right: -15px; /* Adiciona margem à direita apenas para o primeiro item do menu, nesse caso, apenas ao "INICIO". */
-}
-
 .nav-menu li a {
     color: var(--cor6);
     font-size: 18px;
@@ -91,87 +87,31 @@ header {
     height: 50px;
 }
 
-.banner {
-    background-image: linear-gradient(to bottom, var(--cor0), var(--cor2), var(--cor3));
-    min-height: 150px;
-    height: 270px;
-    width: 100%;
-    text-align: center;
-    padding: 40px 20px;
-    box-sizing: border-box;
-    box-shadow: 2px 1px 20px rgb(72, 100, 92);
-}
-
 @media screen and (min-width: 476px) {
     /* Aqui pode definir larguras mínimas para os elementos que não devem quebrar */
     .nav-menu li {
          min-width: 150px; /* Define uma largura mínima para os itens do menu */
-     }
-     .banner {
-        min-width: 466px; /* Define uma largura mínima para o banner */
     }
 }
 
-
-
-
-
-.fontes > #img1 {
-    background: no-repeat;
-    background-size: 5%;
-    justify-content: center;
-    transform: translate(-40%, 50%);
-    float: right;
-    margin-right: 110px;
-    margin-top: -325px;
-    display: block;
-}
-
-@media screen and (max-width: 1267px) and (max-height: 615px) {
-    .fontes > #img1 {
-        display: none !important;  
-    }
-}
-
-.fontes > #img2 {
-    background: no-repeat;
-    background-size: 5%;
-    width: 200px;
-    justify-content: center;
-    transform: translate(-40%, 50%);
-    float: left;
-    margin-left: 275px;
-    margin-top: -329px;
-    display: block;
-}
-
-@media screen and (max-width: 1267px) and (max-height: 615px) {
-    .fontes > #img2 {
-        display: none !important;  
-    }
-}
-
-
-
-
-.fontes > h1 {
+h1 {
     justify-content: center;
     font-family: var(--font-Gistesy);
     font-weight: bolder;
-    font-size: 90px;
+    font-size: 70px;
     color: var(--cor7);
     margin: auto; 
     padding-bottom: 5px;
+
+    /*banner - "Árvore Genealogica" */
+    background-image: linear-gradient(to bottom, var(--cor0), var(--cor2), var(--cor3));
+    text-align: center;
+    padding: 10px 20px;
+    box-sizing: border-box;
+    box-shadow: 2px 1px 15px rgb(72, 100, 92);
 }
 
-.fontes > p {
-    justify-content: center;
-    font-family: var(--font-Comfortaa);
-    font-weight: bolder;
-    font-size: 14px;
-    
-}
-
+/*----------------------------------------------------------------------------------------------*/
 
 main {
     min-width: 300px;
@@ -186,6 +126,21 @@ main {
 }
 
 
+
+.um h2 {
+    padding-top: 20px;
+    font-size: 30px;
+    font-family: var(--font-Russo-One);
+}
+
+.um p {
+    padding-top: 5px;
+    font-size: 20px;
+    font-family: var(--font-Oswald);
+}
+
+
+/*-----------------------------------------------------------------------------------------------*/
 
 /*FOOTER - RODAPÉ*/
 footer { /*Estilos para o rodapé conforme necessário */
