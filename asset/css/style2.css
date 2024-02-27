@@ -125,7 +125,7 @@ main {
     border-bottom-right-radius: 10px;
 }
 
-
+/*CONFIG GLOBAL POR CLASS DAS SECTIONS -------------*/
 
 .um h2 {
     padding-top: 20px;
@@ -138,8 +138,74 @@ main {
     font-size: 20px;
     font-family: var(--font-Oswald);
 }
+/*-------------------------------------------------*/
+
+/*CONFIG INDIVIDUAL POR ID DE CADA SECTION------------------------------------------------*/
+#sec1 h2 {
+    
+}
+
+#sec1 p {
+    column-count: 2; /* Divide o texto em duas colunas */
+    column-gap: 40px; /* Define o espaçamento entre as colunas */
+    column-fill: auto; /* Permite que o navegador decida como preencher as colunas */
+    text-align: justify;
+    text-justify: inter-word;
+    word-spacing: -1px; /* Reduz o espaçamento entre as palavras */
+}
+
+.img1 {
+   float: right;
+   margin-right: 5px;
+   margin-top: -280px;
+}
 
 
+
+#sec2 h2 {
+    direction: rtl; /* Define a direção do texto para da direita para a esquerda */ 
+}
+
+#sec2 p {
+    column-count: 3; /* Divide o texto em duas colunas */
+    column-gap: 40px; /* Define o espaçamento entre as colunas */
+    column-fill: auto; /* Permite que o navegador decida como preencher as colunas */
+    direction: rtl; /* Define a direção do texto para da direita para a esquerda */
+    text-align: justify;
+    text-justify: inter-word;
+    word-spacing: -1px; /* Reduz o espaçamento entre as palavras */
+}
+
+.img2 {
+    float: right;
+    max-width: 1%;;
+    margin-right: 5px;
+    margin-top: -315px;
+    margin-right: 990px;
+ }
+
+
+
+#sec3 h2 {
+    
+}
+
+#sec3 p {
+    column-count: 2; /* Divide o texto em duas colunas */
+    column-gap: 40px; /* Define o espaçamento entre as colunas */
+    column-fill: auto; /* Permite que o navegador decida como preencher as colunas */
+    text-align: justify;
+    text-justify: inter-word;
+    word-spacing: -1px; /* Reduz o espaçamento entre as palavras */
+}
+
+.img3 {
+    float: right;
+    max-width: 1%;;
+    margin-right: 5px;
+    margin-top: -460px;
+    margin-right: 316px;
+ }
 /*-----------------------------------------------------------------------------------------------*/
 
 /*FOOTER - RODAPÉ*/
