@@ -156,8 +156,10 @@ main {
 
 .img1 {
    float: right;
-   margin-right: 5px;
+   max-width: 100%;
+   margin-right: -5px;
    margin-top: -280px;
+   position:relative;
 }
 
 
@@ -178,13 +180,11 @@ main {
 
 .img2 {
     float: right;
-    max-width: 1%;;
-    margin-right: 5px;
+    max-width: 1%;
     margin-top: -315px;
     margin-right: 990px;
+    position: relative;
  }
-
-
 
 #sec3 h2 {
     
@@ -201,11 +201,14 @@ main {
 
 .img3 {
     float: right;
-    max-width: 1%;;
-    margin-right: 5px;
+    max-width: 1%;
+    min-width: 1%;
     margin-top: -460px;
-    margin-right: 316px;
+    margin-right: 315px;
+    position: relative;
  }
+
+
 /*-----------------------------------------------------------------------------------------------*/
 
 /*FOOTER - RODAPÉ*/
@@ -232,3 +235,5 @@ footer a img {
     width: 32px;
     height: 32px;
 }
+
+/**----------------------------/
