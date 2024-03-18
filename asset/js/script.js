@@ -56,4 +56,18 @@ document.querySelector('.arvore-png img').addEventListener('mouseleave', functio
 });
 
 
+// Função para fazer os CARDS Flutuarem!
+// Seleciona todos os cartões
+const cards = document.querySelectorAll('.card');
 
+// Adiciona a classe de animação a cada cartão
+cards.forEach(card => {
+    card.classList.add('floating');
+});
+
+// Remove a classe de animação após um certo período de tempo (por exemplo, 5 segundos)
+setTimeout(() => {
+    cards.forEach(card => {
+        card.classList.remove('floating');
+    });
+}, 5000); // 5000 milissegundos = 5 segundos

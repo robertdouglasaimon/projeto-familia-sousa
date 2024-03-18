@@ -34,6 +34,12 @@
     --cor6:white;
     --cor7:black;
 
+
+    --cor-primaria: #ED4D1B;
+    --cor-secundaria: #FF9A3C;
+    --color-black: #000;
+    --color-white: #fff;
+    
     /* background-image: linear-gradient(to bottom, var(--cor), var(--cor), var(--cor)); */
 }
 
@@ -186,6 +192,98 @@ main {
 }
 
 
+
+/*--CARD-----------------------------------------*/
+
+.cards {
+    display: flex;
+    flex-direction: row;
+    align-items: center;
+    gap: 1.25rem;
+    margin-top: 2rem;
+    margin-bottom: 4rem;
+}
+
+.card {
+    background-image: linear-gradient(to bottom, var(--cor0), var(--cor2), var(--cor3));
+    border: 2px solid var(--color-black);
+    box-shadow: 4px 4px 0 var(--color-black);
+    max-width: 12.4rem;
+    padding: 2rem 0 0 2rem;
+
+    animation: float 1s ease infinite; /* Aplica a animação de flutuação aos cartões JUNTO AO KEYFRAMES ABAIXO*/
+}
+/* KEYFRAMES DE ANIMAÇÃO DOS CARDS ----------------------------------------------------------------------*/
+@keyframes float-up {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(-10px);
+    }
+}
+
+@keyframes float-down {
+    0%, 100% {
+        transform: translateY(0);
+    }
+    50% {
+        transform: translateY(10px);
+    }
+}
+
+.card:nth-child(1) {
+    animation: float-up 2s ease infinite; /* Card 1 sobe */
+}
+
+.card:nth-child(2) {
+    animation: float-down 2s ease infinite; /* Card 2 desce */
+}
+
+.card:nth-child(3) {
+    animation: float-up 2s ease infinite; /* Card 3 sobe */
+}
+
+.card:nth-child(4) {
+    animation: float-down 2s ease infinite; /* Card 4 desce */
+}
+
+/*
+    Neste exemplo, os cards 1 e 3 usam a animação float-up, enquanto os cards 2 e 4 
+    usam a animação float-down. 
+
+    Isso fará com que os cards se movam alternadamente, com um subindo e o seguinte descendo.
+    Você pode ajustar a duração e outras propriedades da animação conforme desejado.
+
+
+/*------------------------------------------------------------------------------------------------*/
+
+.card:nth-child(2n){
+    align-self: self-end;
+    background-image: linear-gradient(to top, var(--cor0), var(--cor2), var(--cor3));
+}
+
+.card strong {
+    display: block;
+    font-size: 1.5rem;
+    margin: 1rem 0;
+}
+
+.card a {
+    display: block;
+    margin: 3rem 0 0 auto;
+    width: fit-content;
+}
+
+.card > a > img {
+    width: 196px;
+    height: 240px;
+    padding-right: 100px;
+    border-radius: 3%;
+    
+}
+
+/*------------------------------------------------------------*/
 
 /*FOOTER - RODAPÉ*/
 footer { /*Estilos para o rodapé conforme necessário */
